@@ -2,7 +2,7 @@ name: Build and release
 
 on:
   push:
-    branches: [work]
+    branches: [main, work]
     tags: ['v*']
   pull_request:
   workflow_dispatch:
@@ -15,19 +15,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
           java-version: '21'
+
       - uses: gradle/actions/setup-gradle@v4
         with:
-          # Keep CI on the Gradle line supported by the Fabric Loom 1.13 toolchain.
-          gradle-version: '8.14.4'
-      - run: gradle build
+          # Fabric Loom 1.17 (Minecraft 1.21.11 toolchain) requires Gradle 9.5.0.
+          gradle-version: '9.5.0'
+
+      - name: Build
+        run: gradle build --no-daemon
+
       - uses: actions/upload-artifact@v4
         with:
           name: donut-meta
           path: build/libs/*.jar
+          if-no-files-found: error
+
       - name: Publish tagged release
         if: startsWith(github.ref, 'refs/tags/v')
         uses: softprops/action-gh-release@v2
