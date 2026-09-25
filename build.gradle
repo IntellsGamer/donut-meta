@@ -1,7 +1,5 @@
 plugins {
-    // Use a newer Loom version compatible with Gradle 9.5
-    // Loom 1.14+ introduced the remap plugin ID; newer versions fix Gradle 9 issues
-    id 'net.fabricmc.fabric-loom-remap' version '1.17.24'
+    id 'net.fabricmc.fabric-loom-remap' version '1.17-SNAPSHOT'
     id 'maven-publish'
 }
 
