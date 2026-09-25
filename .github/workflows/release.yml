@@ -20,6 +20,9 @@ jobs:
           distribution: temurin
           java-version: '21'
       - uses: gradle/actions/setup-gradle@v4
+        with:
+          # Keep CI on the Gradle line supported by the Fabric Loom 1.13 toolchain.
+          gradle-version: '8.14.4'
       - run: gradle build
       - uses: actions/upload-artifact@v4
         with:
