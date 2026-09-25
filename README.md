@@ -13,7 +13,7 @@ A **client-side, read-only** Fabric mod for comparing DonutSMP order prices with
 
 ## Build
 
-This project targets Minecraft **1.21.11**, uses Fabric Loom with Yarn mappings, Fabric API 0.141.6, Fabric Loader 0.19.5, Java 21, and a compile-only Mod Menu 17 integration.
+This project targets Minecraft **1.21.11**, uses Fabric Loom with Yarn mappings, Fabric API 0.141.6, Fabric Loader **0.19.3** (minimum), Java 21, and a compile-only Mod Menu 17 integration. The current mod version is 1.0.2.
 
 ```bash
 gradle build
