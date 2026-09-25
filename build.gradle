@@ -1,0 +1,34 @@
+plugins {
+    // Official Fabric 1.21.11 template plugin and Loom line.
+    id 'net.fabricmc.fabric-loom-remap' version '1.17-SNAPSHOT'
+    id 'maven-publish'
+}
+
+version = providers.gradleProperty('mod_version').get()
+group = providers.gradleProperty('maven_group').get()
+
+base { archivesName = providers.gradleProperty('archives_base_name').get() }
+
+repositories {
+    maven { url = 'https://maven.terraformersmc.com/releases/' }
+}
+
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings loom.officialMojangMappings()
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+    modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
+    modCompileOnly "com.terraformersmc:modmenu:${project.modmenu_version}"
+}
+
+processResources {
+    inputs.property 'version', project.version
+    filesMatching('fabric.mod.json') { expand version: project.version }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    it.options.release = 21
+    it.options.encoding = 'UTF-8'
+}
+
+java { withSourcesJar() }

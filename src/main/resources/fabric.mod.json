@@ -1,0 +1,20 @@
+{
+  "schemaVersion": 1,
+  "id": "donutmeta",
+  "version": "${version}",
+  "name": "Donut META",
+  "description": "Read-only DonutSMP order and auction price comparison.",
+  "authors": ["Donut META contributors"],
+  "environment": "client",
+  "entrypoints": {
+    "client": ["net.donutmeta.DonutMetaClient"],
+    "modmenu": ["net.donutmeta.ModMenuIntegration"]
+  },
+  "depends": {
+    "fabricloader": ">=0.19.5",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  },
+  "suggests": { "modmenu": "*" }
+}
