@@ -1,6 +1,6 @@
 plugins {
-    // Official Fabric 1.21.11 template plugin and Loom line.
-    id 'net.fabricmc.fabric-loom-remap' version '1.17-SNAPSHOT'
+    // Loom publishes its actively supported Minecraft-version line as a Fabric Maven snapshot.
+    id 'fabric-loom' version '1.13-SNAPSHOT'
     id 'maven-publish'
 }
 
