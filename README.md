@@ -13,13 +13,13 @@ A **client-side, read-only** Fabric mod for comparing DonutSMP order prices with
 
 ## Build
 
-This project targets Minecraft **1.21.11**, uses official Mojang mappings through Fabric Loom, Fabric API 0.141.6, Fabric Loader 0.19.3, Java 21, and a compile-only Mod Menu 17 integration.
+This project targets Minecraft **1.21.11**, uses official Mojang mappings through Fabric Loom, Fabric API, Java 21, and a compile-only Mod Menu integration.
 
 ```bash
 gradle build
 ```
 
-The installable mod JAR is `build/libs/donut-meta-<version>.jar`. Do **not** install the separate `-sources.jar`; it contains source code only and cannot provide the Fabric entrypoint class. Install the mod JAR alongside Fabric API; Mod Menu is optional but enables its Mods-screen configuration button.
+The mod JAR is written to `build/libs/`. Install it alongside Fabric API; Mod Menu is optional but enables its Mods-screen configuration button.
 
 ## Release workflow
 
