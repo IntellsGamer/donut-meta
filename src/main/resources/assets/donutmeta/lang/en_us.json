@@ -1,5 +1,5 @@
 {
-  "key.category.donutmeta": "Donut META",
+  "key.category.donutmeta.general": "Donut META",
   "key.donutmeta.start": "Start scraper",
   "key.donutmeta.stop": "Stop scraper",
   "key.donutmeta.panel": "Open META panel"
